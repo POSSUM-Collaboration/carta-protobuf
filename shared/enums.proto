@@ -347,3 +347,17 @@ enum FittingSolverType {
     Mcholesky = 2; // Uses a modified Cholesky decomposition
     Svd = 3; // Uses a singular value decomposition
 }
+
+// Role of an image axis in the viewer
+enum AxisRole {
+    // Rendered horizontally
+    AxisX = 0;
+    // Rendered vertically
+    AxisY = 1;
+    // Depth (channel) axis, animated with the channel slider
+    AxisZ = 2;
+    // Stokes (polarization) axis
+    AxisStokes = 3;
+    // Any further axis: not rendered or animated, pinned at a current index
+    AxisExtra = 4;
+}

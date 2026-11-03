@@ -21,4 +21,6 @@ message SetImageChannels {
     IntBounds current_range = 6;
     // Set current image channel during channel map
     bool channel_map_enabled = 7;
+    // Current index of each extra (pinned) axis, in the order of the AxisExtra entries of FileInfoExtended.axes
+    repeated sfixed32 extra_axis_indices = 8;
 }

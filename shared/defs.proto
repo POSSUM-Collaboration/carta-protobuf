@@ -59,6 +59,26 @@ message FileInfoExtended {
     repeated HeaderEntry computed_entries = 8;
     // Axes numbers for directions, spectral, and stokes
     AxesNumbers axes_numbers = 9;
+    // Description of every axis of the image, in file order (any number of axes)
+    repeated AxisInfo axes = 10;
+}
+
+message AxisInfo {
+    // 1-based axis number in the file
+    sfixed32 number = 1;
+    // Axis type (CTYPEn) and unit (CUNITn) from the header, if any
+    string ctype = 2;
+    string cunit = 3;
+    // Number of pixels along the axis
+    sfixed32 size = 4;
+    // Role of the axis in the viewer
+    AxisRole role = 5;
+    // Reference value, increment and reference pixel (1-based) from the header; zero if absent
+    double crval = 6;
+    double cdelt = 7;
+    double crpix = 8;
+    // World coordinate of every pixel along the axis, for labelling (omitted for very long or non-linear axes)
+    repeated double world_values = 9;
 }
 
 message HeaderEntry {

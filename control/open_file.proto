@@ -22,6 +22,9 @@ message OpenFile {
     bool lel_expr = 6;
     // Defines whether to support AIPS beam in FITS history headers
     bool support_aips_beam = 7;
+    // Optional permutation of the file's axes (0-based file axis for each image axis): the first two entries are rendered,
+    // the third is the depth axis. Empty = file order.
+    repeated sfixed32 axis_order = 8;
 }
 
 // OPEN_FILE_ACK
