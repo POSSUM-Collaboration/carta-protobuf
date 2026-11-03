@@ -2,6 +2,7 @@ syntax = "proto3";
 package CARTA;
 
 import "defs.proto";
+import "open_file.proto";
 
 // FILE_INFO_REQUEST:
 // Requests the file info for a specific file.
@@ -15,6 +16,8 @@ message FileInfoRequest {
     string hdu = 3;
     // Defines whether to support AIPS beam in FITS history headers
     bool support_aips_beam = 4;
+    // Reprojection settings for HEALPix maps (ignored for other files)
+    HealpixOptions healpix = 5;
 }
 
 // FILE_INFO_RESPONSE
