@@ -2,6 +2,7 @@ syntax = "proto3";
 package CARTA;
 
 import "defs.proto";
+import "open_file.proto";
 
 // FILE_INFO_REQUEST:
 // Requests the file info for a specific file.
@@ -17,6 +18,8 @@ message FileInfoRequest {
     bool support_aips_beam = 4;
     // Optional permutation of the file's axes, as in OpenFile
     repeated sfixed32 axis_order = 5;
+    // Reprojection settings for HEALPix maps (ignored for other files)
+    HealpixOptions healpix = 6;
 }
 
 // FILE_INFO_RESPONSE
