@@ -31,6 +31,9 @@ message HealpixOptions {
     // Reproject onto the pixel grid and WCS of an already open image instead (overrides the fields above)
     bool match_image = 11;
     sfixed32 match_file_id = 12;
+    // When matching: enlarge the grid around the image (keeping its WCS and pixel scale) out to where the projection
+    // is valid, so zooming out shows the map around the image
+    bool extend_sky = 13;
 }
 
 message OpenFile {
